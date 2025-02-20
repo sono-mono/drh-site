@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DRH - Scan Your World</title>
+</head>
+<body>
+    <h1>DRH: Share Your Reality</h1>
+    <p>Upload a photo or 10s video of your surroundings!</p>
+    <input type="file" id="media" accept="image/*,video/*" capture="environment">
+    <button onclick="upload()">Upload</button>
+    <div id="status"></div>
+
+    <script>
+        function upload() {
+            const file = document.getElementById('media').files[0];
+            if (!file) {
+                document.getElementById('status').innerText = "Pick a file first!";
+                return;
+            }
+            document.getElementById('status').innerText = `Thanks! Uploaded: ${file.name}`;
+        }
+    </script>
+</body>
+</html>
